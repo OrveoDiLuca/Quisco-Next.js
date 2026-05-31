@@ -1,0 +1,22 @@
+"use client"
+import { Product } from "@/src/generated/prisma/client"
+import { useStore } from "@/src/store"
+
+type AddProductProps = {
+    product : Product
+}
+
+export default function AddProduct({product}: AddProductProps) {
+
+    const addToCard = useStore((state) => state.addToCart)
+
+    return (
+        <button
+            type="button"
+            className="bg-indigo-600 hover:bg-indigo-800 text-white w-full mt-5 p-3 uppercase font-bold cursor-pointer"
+            onClick={() => addToCard(product)} 
+        >
+            Agregar
+        </button>
+    )
+}
