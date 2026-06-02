@@ -1,5 +1,6 @@
 import OrderSidebar from "@/components/order/OrderSidebar";
 import OrderSummary from "@/components/order/OrderSummary";
+import ToastModification from "@/components/ui/ToastModification";
 
 export default function OrderLayout({children}: Readonly<{children: React.ReactNode}>) {
     return (
@@ -10,7 +11,7 @@ export default function OrderLayout({children}: Readonly<{children: React.ReactN
                 <main className="md:flex-1 md:h-screen md:overflow-y-scroll p-5">
                     {children}
                 </main>
-
+                <ToastModification/>
                 <OrderSummary/>
             </div>
         </>
